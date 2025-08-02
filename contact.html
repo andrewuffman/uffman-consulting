@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact – Uffman Finance &amp; Accounting Consulting</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-container">
+            <h1 class="logo"><a href="index.html">Uffman Consulting</a></h1>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="inner-hero">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <p>Have questions?  Interested in working together?  We’d love to hear from you.</p>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div class="container contact-container">
+            <div class="contact-info">
+                <h3>Contact Details</h3>
+                <p><strong>Email:</strong> <a href="mailto:andrew@example.com">andrew@example.com</a></p>
+                <p><strong>Phone:</strong> (XXX) XXX‑XXXX</p>
+                <p><strong>Location:</strong> Dallas–Fort Worth, Texas</p>
+                <p>We serve clients throughout the North Texas region.  Please call or send a message to schedule a consultation.</p>
+            </div>
+            <div class="contact-form">
+                <h3>Send a message</h3>
+                <form action="mailto:andrew@example.com" method="post" enctype="text/plain">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="Name" required>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="Email" required>
+                    <label for="message">Message</label>
+                    <textarea id="message" name="Message" rows="5" required></textarea>
+                    <button type="submit" class="btn primary-btn">Send</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <p>&copy; <span id="year"></span> Uffman Finance &amp; Accounting Consulting.</p>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

@@ -51,6 +51,13 @@ p {
     font-weight: 600;
     color: #fff;
 }
+
+/* Logo image styling */
+.logo img {
+    height: 40px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
 .main-nav ul {
     list-style: none;
     display: flex;

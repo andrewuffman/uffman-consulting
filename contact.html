@@ -1,18 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1YXM5BJ4H2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-1YXM5BJ4H2');
-</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact – Uffman Consulting Group</title>
+    <title>Contact - Uffman Consulting Group</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
@@ -21,7 +12,6 @@
         <div class="container header-container">
             <h1 class="logo">
                 <a href="index.html">
-                    <img src="logo.png" alt="Uffman Consulting Group logo" class="logo-img">
                     Uffman Consulting Group
                 </a>
             </h1>
@@ -30,52 +20,49 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="services.html">Services</a></li>
-                    <li><a href="financial-tools/">Financial Tools</a></li>
-                    <li><a href="contact.html" class="active">Contact</a></li>
+                    <li><a href="/financial-tools/">Financial Tools</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section class="inner-hero">
-        <div class="container">
-            <h2>Get in Touch</h2>
-            <p>Have questions?  Interested in working together?  We'd love to hear from you.</p>
-        </div>
-    </section>
+    <main class="main-content">
+        <section class="inner-hero">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <p>Ready to optimize your cash flow? Let's talk.</p>
+            </div>
+        </section>
 
-    <section class="contact-section">
-        <div class="container contact-container">
-            <div class="contact-info">
-                <h3>Contact Details</h3>
-                <p><strong>Email:</strong> <a href="mailto:andrew@uffmanconsultingroup.com">andrew@uffmanconsultingroup.com</a></p>
-                <p><strong>Phone:</strong> (469) 545‑0720</p>
-                <p><strong>Location:</strong> Dallas–Fort Worth, Texas</p>
-                <p>We serve clients throughout the North Texas region.  Please call or send a message to schedule a consultation.</p>
+        <section class="contact-content">
+            <div class="container">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <p>Ready to improve your accounts receivable processes and cash flow forecasting?</p>
+                    
+                    <div class="contact-details">
+                        <h4>Location</h4>
+                        <p>Dallas–Fort Worth Metroplex, Texas</p>
+                        
+                        <h4>Services</h4>
+                        <ul>
+                            <li>AR Process Optimization</li>
+                            <li>Cash Flow Forecasting</li>
+                            <li>Digital Financial Tools</li>
+                        </ul>
+                        
+                        <a href="/financial-tools/" class="btn btn-primary">View Our Tools</a>
+                    </div>
+                </div>
             </div>
-            <div class="contact-form">
-                <h3>Send a message</h3>
-                <!-- Update mailto to send to the professional domain -->
-                <form action="mailto:andrew@uffmanconsultingroup.com" method="post" enctype="text/plain">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="Name" required>
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="Email" required>
-                    <label for="message">Message</label>
-                    <textarea id="message" name="Message" rows="5" required></textarea>
-                    <button type="submit" class="btn primary-btn">Send</button>
-                </form>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer class="site-footer">
-        <div class="container footer-container">
-            <p>&copy; <span id="year"></span> Uffman Consulting Group.</p>
+        <div class="container">
+            <p>&copy; 2025 Uffman Consulting Group. Based in Dallas–Fort Worth, Texas.</p>
         </div>
     </footer>
-    <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
 </body>
 </html> 

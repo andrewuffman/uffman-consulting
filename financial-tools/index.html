@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Tools - Uffman Consulting Group</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .payment-container {
+            max-width: 600px;
+            margin: 4rem auto;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .payment-header {
+            margin-bottom: 2rem;
+        }
+        
+        .payment-header h1 {
+            color: #1e3a8a;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .payment-header p {
+            color: #6b7280;
+            font-size: 1.1rem;
+        }
+        
+        .pricing-card {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            transition: all 0.3s ease;
+        }
+        
+        .pricing-card:hover {
+            border-color: #3b82f6;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.1);
+        }
+        
+        .price {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #1e3a8a;
+            margin: 1rem 0;
+        }
+        
+        .features {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+        }
+        
+        .features li {
+            padding: 0.5rem 0;
+            color: #374151;
+        }
+        
+        .features li:before {
+            content: "✓";
+            color: #10b981;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        
+        .payment-btn {
+            background: linear-gradient(135deg, #1e40af, #3b82f6);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-top: 1rem;
+        }
+        
+        .payment-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-top: 2rem;
+            color: #6b7280;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .back-link:hover {
+            color: #3b82f6;
+        }
+    </style>
+</head>
+<body>
+    <div class="app">
+        <header class="header">
+            <div class="header-content">
+                <h1 class="logo">Uffman Consulting Group</h1>
+                <p class="subtitle">Elevate Your Cash Flow • Order-to-Cash & Accounts Receivable Consulting</p>
+                <p class="location">Dallas–Fort Worth Metroplex</p>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="payment-container">
+                <div class="payment-header">
+                    <h1>Financial Tools Access</h1>
+                    <p>Unlock professional cash flow and AR aging tools to accelerate your business growth</p>
+                </div>
+
+                <div class="pricing-card">
+                    <h2>Professional Financial Dashboard</h2>
+                    <div class="price">$99<span style="font-size: 1rem;">/month</span></div>
+                    <ul class="features">
+                        <li>AR Aging Calculator & Dashboard</li>
+                        <li>Cash Flow Forecasting Model</li>
+                        <li>Interactive Charts & Analytics</li>
+                        <li>Export & Reporting Features</li>
+                        <li>Priority Support</li>
+                        <li>Monthly Updates & Enhancements</li>
+                    </ul>
+                    <button class="payment-btn" onclick="processPayment()">Get Started Now</button>
+                </div>
+
+                <div class="pricing-card">
+                    <h2>Enterprise Package</h2>
+                    <div class="price">$299<span style="font-size: 1rem;">/month</span></div>
+                    <ul class="features">
+                        <li>Everything in Professional</li>
+                        <li>Custom Dashboard Branding</li>
+                        <li>API Integration</li>
+                        <li>Dedicated Account Manager</li>
+                        <li>Custom Training Sessions</li>
+                        <li>White-label Options</li>
+                    </ul>
+                    <button class="payment-btn" onclick="processPayment()">Contact Sales</button>
+                </div>
+
+                <a href="../index.html" class="back-link">← Back to Main Site</a>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <p>&copy; 2025 Uffman Consulting Group. Based in Dallas–Fort Worth, Texas.</p>
+                <p>Expert Order-to-Cash and Accounts Receivable Consulting</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        function processPayment() {
+            // This would integrate with your payment processor
+            // For now, we'll redirect to a demo version
+            alert('Payment processing would be integrated here. Redirecting to demo...');
+            window.location.href = 'index.html';
+        }
+        
+        // Check if user has already paid (demo purposes)
+        const hasAccess = localStorage.getItem('dashboard_access');
+        if (hasAccess === 'true') {
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html> 

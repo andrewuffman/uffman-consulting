@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uffman Consulting Group - Cash Flow Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/date-fns@2.29.3/index.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+    <div class="app">
+        <header class="header">
+            <div class="header-content">
+                <h1 class="logo">Uffman Consulting Group</h1>
+                <p class="subtitle">Elevate Your Cash Flow • Order-to-Cash & Accounts Receivable Consulting</p>
+                <p class="location">Dallas–Fort Worth Metroplex</p>
+            </div>
+        </header>
+
+        <nav class="nav">
+            <button class="nav-btn active" data-tab="ar-aging">AR Aging</button>
+            <button class="nav-btn" data-tab="cash-flow">Cash Flow Forecast</button>
+        </nav>
+
+        <main class="main-content">
+            <!-- AR Aging Section -->
+            <section id="ar-aging" class="tab-content active">
+                <div class="section-header">
+                    <h2>Accounts Receivable Aging</h2>
+                    <div class="date-picker">
+                        <label for="as-of-date">As-of Date:</label>
+                        <input type="date" id="as-of-date" value="2025-08-03">
+                    </div>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="calculator-section">
+                        <h3>AR Aging Calculator</h3>
+                        <div class="table-container">
+                            <table class="data-table" id="ar-table">
+                                <thead>
+                                    <tr>
+                                        <th>Customer</th>
+                                        <th>Invoice #</th>
+                                        <th>Invoice Date</th>
+                                        <th>Due Date</th>
+                                        <th>Invoice Amount</th>
+                                        <th>Current</th>
+                                        <th>1-30 days</th>
+                                        <th>31-60 days</th>
+                                        <th>61-90 days</th>
+                                        <th>90+ days</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="ar-table-body">
+                                    <!-- Data will be populated by JavaScript -->
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="table-actions">
+                            <button class="btn btn-primary" onclick="addARRow()">Add Row</button>
+                            <button class="btn btn-secondary" onclick="calculateAging()">Calculate Aging</button>
+                            <button class="btn btn-success" onclick="exportToExcel()">Export to Excel</button>
+                        </div>
+                    </div>
+
+                    <div class="summary-section">
+                        <h3>AR Aging Summary</h3>
+                        <div class="summary-grid">
+                            <div class="summary-card">
+                                <h4>Total AR</h4>
+                                <p class="amount" id="total-ar">$0.00</p>
+                            </div>
+                            <div class="summary-card">
+                                <h4>Current</h4>
+                                <p class="amount current" id="current-amount">$0.00</p>
+                            </div>
+                            <div class="summary-card">
+                                <h4>1-30 Days</h4>
+                                <p class="amount overdue-30" id="overdue-30-amount">$0.00</p>
+                            </div>
+                            <div class="summary-card">
+                                <h4>31-60 Days</h4>
+                                <p class="amount overdue-60" id="overdue-60-amount">$0.00</p>
+                            </div>
+                            <div class="summary-card">
+                                <h4>61-90 Days</h4>
+                                <p class="amount overdue-90" id="overdue-90-amount">$0.00</p>
+                            </div>
+                            <div class="summary-card">
+                                <h4>90+ Days</h4>
+                                <p class="amount overdue-90plus" id="overdue-90plus-amount">$0.00</p>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="ar-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cash Flow Forecast Section -->
+            <section id="cash-flow" class="tab-content">
+                <div class="section-header">
+                    <h2>Cash Flow Forecast</h2>
+                    <div class="forecast-controls">
+                        <label for="starting-balance">Starting Cash Balance:</label>
+                        <input type="number" id="starting-balance" value="10000" step="1000">
+                    </div>
+                </div>
+
+                <div class="forecast-grid">
+                    <div class="forecast-table-section">
+                        <h3>Monthly Forecast</h3>
+                        <div class="table-actions">
+                            <button class="btn btn-success" onclick="exportCashFlowToExcel()">Export to Excel</button>
+                        </div>
+                        <div class="table-container">
+                            <table class="data-table" id="cash-flow-table">
+                                <thead>
+                                    <tr>
+                                        <th>Category</th>
+                                        <th>Jan</th>
+                                        <th>Feb</th>
+                                        <th>Mar</th>
+                                        <th>Apr</th>
+                                        <th>May</th>
+                                        <th>Jun</th>
+                                        <th>Jul</th>
+                                        <th>Aug</th>
+                                        <th>Sep</th>
+                                        <th>Oct</th>
+                                        <th>Nov</th>
+                                        <th>Dec</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="cash-flow-table-body">
+                                    <!-- Data will be populated by JavaScript -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="forecast-summary-section">
+                        <h3>Cash Flow Summary</h3>
+                        <div class="summary-grid">
+                            <div class="summary-card">
+                                <h4>Total Inflows</h4>
+                                <p class="amount positive" id="total-inflows">$0.00</p>
+                            </div>
+                            <div class="summary-card">
+                                <h4>Total Outflows</h4>
+                                <p class="amount negative" id="total-outflows">$0.00</p>
+                            </div>
+                            <div class="summary-card">
+                                <h4>Net Cash Flow</h4>
+                                <p class="amount" id="net-cash-flow">$0.00</p>
+                            </div>
+                            <div class="summary-card">
+                                <h4>Ending Balance</h4>
+                                <p class="amount" id="ending-balance">$0.00</p>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="cash-flow-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer class="footer">
+            <div class="footer-content">
+                <p>&copy; 2025 Uffman Consulting Group. Based in Dallas–Fort Worth, Texas.</p>
+                <p>Expert Order-to-Cash and Accounts Receivable Consulting</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 

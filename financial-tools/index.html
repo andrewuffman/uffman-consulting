@@ -5,52 +5,217 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Financial Tools - Uffman Consulting Group</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fafafa;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        h1, h2, h3 {
+            margin-bottom: 0.6rem;
+            color: #003366;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            color: #444;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header */
+        .site-header {
+            background: #003366;
+            color: #fff;
+            padding: 1rem 0;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo a {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+
+        
+        .main-nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .main-nav a {
+            color: #fff;
+            font-weight: 400;
+            transition: opacity 0.3s ease;
+        }
+        
+        .main-nav a:hover,
+        .main-nav a.active {
+            opacity: 0.8;
+        }
+        
         .payment-container {
-            max-width: 600px;
-            margin: 4rem auto;
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 15px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            text-align: center;
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 15px;
         }
         
         .payment-header {
-            margin-bottom: 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
         }
         
         .payment-header h1 {
-            color: #1e3a8a;
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
+            color: #003366;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
         }
         
         .payment-header p {
-            color: #6b7280;
-            font-size: 1.1rem;
+            color: #444;
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .inner-hero {
+            background: #e6f3ff;
+            padding: 3rem 0;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .tools-preview {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .tool-preview {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .tool-preview h3 {
+            color: #003366;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .tool-preview p {
+            color: #444;
+            margin-bottom: 1.5rem;
+        }
+        
+        .tool-screenshot {
+            width: 100%;
+            height: 300px;
+            background: #ffffff;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            border: 1px solid #e0e0e0;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .tool-screenshot img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+        
+        .tool-screenshot-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 0.9rem;
+            text-align: center;
+            padding: 1rem;
+        }
+        
+        .pricing-section {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
         }
         
         .pricing-card {
             background: white;
-            border: 2px solid #e5e7eb;
-            border-radius: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
             padding: 2rem;
-            margin: 2rem 0;
             transition: all 0.3s ease;
         }
         
         .pricing-card:hover {
-            border-color: #3b82f6;
+            border-color: #003366;
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.1);
+            box-shadow: 0 4px 15px rgba(0, 51, 102, 0.1);
+        }
+        
+        .pricing-card h2 {
+            color: #003366;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
         }
         
         .price {
-            font-size: 3rem;
-            font-weight: 700;
-            color: #1e3a8a;
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #003366;
             margin: 1rem 0;
         }
         
@@ -62,94 +227,244 @@
         
         .features li {
             padding: 0.5rem 0;
-            color: #374151;
+            color: #444;
+            font-size: 0.95rem;
         }
         
         .features li:before {
             content: "✓";
-            color: #10b981;
+            color: #28a745;
             font-weight: bold;
             margin-right: 0.5rem;
         }
         
         .payment-btn {
-            background: linear-gradient(135deg, #1e40af, #3b82f6);
+            background: #003366;
             color: white;
             border: none;
             padding: 1rem 2rem;
-            border-radius: 8px;
+            border-radius: 6px;
             font-size: 1.1rem;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
             width: 100%;
             margin-top: 1rem;
+            font-family: 'Montserrat', sans-serif;
         }
         
         .payment-btn:hover {
+            background: #002244;
             transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+            box-shadow: 0 4px 15px rgba(0, 51, 102, 0.3);
         }
         
         .back-link {
             display: inline-block;
             margin-top: 2rem;
-            color: #6b7280;
+            color: #003366;
             text-decoration: none;
             font-weight: 500;
+            font-family: 'Montserrat', sans-serif;
         }
         
         .back-link:hover {
-            color: #3b82f6;
+            text-decoration: underline;
+        }
+        
+        .section-title {
+            color: #003366;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .tools-preview {
+                grid-template-columns: 1fr;
+            }
+            
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
     <div class="app">
-        <header class="header">
-            <div class="header-content">
-                <h1 class="logo">Uffman Consulting Group</h1>
-                <p class="subtitle">Elevate Your Cash Flow • Order-to-Cash & Accounts Receivable Consulting</p>
-                <p class="location">Dallas–Fort Worth Metroplex</p>
+        <header class="site-header">
+            <div class="container header-container">
+                <h1 class="logo">
+                    <a href="../index.html">
+                        Uffman Consulting Group
+                    </a>
+                </h1>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../about.html">About</a></li>
+                        <li><a href="../services.html">Services</a></li>
+                        <li><a href="index.html" class="active">Financial Tools</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                </nav>
             </div>
         </header>
 
+        <section class="inner-hero">
+            <div class="container">
+                <h2>Professional Financial Tools</h2>
+                <p>Access powerful AR aging and cash flow forecasting tools designed specifically for growing businesses. Get the same level of financial insight that Fortune 500 companies use.</p>
+            </div>
+        </section>
+
         <main class="main-content">
             <div class="payment-container">
-                <div class="payment-header">
-                    <h1>Financial Tools Access</h1>
-                    <p>Unlock professional cash flow and AR aging tools to accelerate your business growth</p>
+                <h2 class="section-title">Tool Preview</h2>
+                <div class="tools-preview">
+                    <div class="tool-preview">
+                        <h3>AR Aging Dashboard</h3>
+                        <p>Track customer invoices, calculate aging buckets, and visualize your accounts receivable with professional charts and analytics.</p>
+                        <div class="tool-screenshot">
+                            <svg width="100%" height="100%" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="100%" height="100%" fill="#ffffff"/>
+                                <rect x="0" y="0" width="100%" height="50" fill="#003366"/>
+                                <text x="50%" y="30" text-anchor="middle" fill="white" font-family="Montserrat, sans-serif" font-size="16" font-weight="600">AR Aging Dashboard</text>
+                                
+                                <!-- Summary Cards -->
+                                <rect x="20" y="70" width="110" height="40" fill="#f8f9fa" stroke="#e9ecef" stroke-width="1" rx="4"/>
+                                <text x="75" y="85" text-anchor="middle" fill="#003366" font-family="Montserrat, sans-serif" font-size="10" font-weight="600">Total AR</text>
+                                <text x="75" y="100" text-anchor="middle" fill="#333" font-family="Montserrat, sans-serif" font-size="12">$17,000</text>
+                                
+                                <rect x="145" y="70" width="110" height="40" fill="#f8f9fa" stroke="#e9ecef" stroke-width="1" rx="4"/>
+                                <text x="200" y="85" text-anchor="middle" fill="#003366" font-family="Montserrat, sans-serif" font-size="10" font-weight="600">Current</text>
+                                <text x="200" y="100" text-anchor="middle" fill="#28a745" font-family="Montserrat, sans-serif" font-size="12">$5,000</text>
+                                
+                                <rect x="270" y="70" width="110" height="40" fill="#f8f9fa" stroke="#e9ecef" stroke-width="1" rx="4"/>
+                                <text x="325" y="85" text-anchor="middle" fill="#003366" font-family="Montserrat, sans-serif" font-size="10" font-weight="600">1-30 Days</text>
+                                <text x="325" y="100" text-anchor="middle" fill="#ffc107" font-family="Montserrat, sans-serif" font-size="12">$3,500</text>
+                                
+                                <!-- Chart Area -->
+                                <rect x="20" y="130" width="360" height="80" fill="#e6f3ff" stroke="#d1ecf1" stroke-width="1" rx="4"/>
+                                <text x="50%" y="175" text-anchor="middle" fill="#003366" font-family="Montserrat, sans-serif" font-size="14" font-weight="600">📊 AR Aging Chart</text>
+                                
+                                <!-- Table -->
+                                <rect x="20" y="230" width="360" height="60" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1" rx="4"/>
+                                <rect x="20" y="230" width="360" height="20" fill="#003366"/>
+                                <text x="80" y="243" fill="white" font-family="Montserrat, sans-serif" font-size="8">Customer</text>
+                                <text x="180" y="243" fill="white" font-family="Montserrat, sans-serif" font-size="8">Invoice</text>
+                                <text x="280" y="243" fill="white" font-family="Montserrat, sans-serif" font-size="8">Amount</text>
+                                <text x="340" y="243" fill="white" font-family="Montserrat, sans-serif" font-size="8">Status</text>
+                                
+                                <text x="80" y="260" fill="#333" font-family="Montserrat, sans-serif" font-size="8">ABC Corp</text>
+                                <text x="180" y="260" fill="#333" font-family="Montserrat, sans-serif" font-size="8">INV-001</text>
+                                <text x="280" y="260" fill="#333" font-family="Montserrat, sans-serif" font-size="8">$5,000</text>
+                                <text x="340" y="260" fill="#28a745" font-family="Montserrat, sans-serif" font-size="8">Current</text>
+                                
+                                <text x="80" y="275" fill="#333" font-family="Montserrat, sans-serif" font-size="8">XYZ Inc</text>
+                                <text x="180" y="275" fill="#333" font-family="Montserrat, sans-serif" font-size="8">INV-002</text>
+                                <text x="280" y="275" fill="#333" font-family="Montserrat, sans-serif" font-size="8">$3,500</text>
+                                <text x="340" y="275" fill="#ffc107" font-family="Montserrat, sans-serif" font-size="8">1-30 Days</text>
+                            </svg>
+                        </div>
+                        <ul class="features" style="text-align: left; margin: 1rem 0;">
+                            <li>Customer invoice tracking</li>
+                            <li>Automatic aging calculations</li>
+                            <li>Visual summary cards</li>
+                            <li>Export to Excel functionality</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tool-preview">
+                        <h3>Cash Flow Forecasting</h3>
+                        <p>Build 12-month cash flow projections with detailed inflow/outflow tracking and professional reporting capabilities.</p>
+                        <div class="tool-screenshot">
+                            <svg width="100%" height="100%" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="100%" height="100%" fill="#ffffff"/>
+                                <rect x="0" y="0" width="100%" height="50" fill="#003366"/>
+                                <text x="50%" y="30" text-anchor="middle" fill="white" font-family="Montserrat, sans-serif" font-size="16" font-weight="600">Cash Flow Forecast</text>
+                                
+                                <!-- Summary Cards -->
+                                <rect x="20" y="70" width="110" height="40" fill="#f8f9fa" stroke="#e9ecef" stroke-width="1" rx="4"/>
+                                <text x="75" y="85" text-anchor="middle" fill="#003366" font-family="Montserrat, sans-serif" font-size="10" font-weight="600">Total Inflows</text>
+                                <text x="75" y="100" text-anchor="middle" fill="#28a745" font-family="Montserrat, sans-serif" font-size="12">$189,000</text>
+                                
+                                <rect x="145" y="70" width="110" height="40" fill="#f8f9fa" stroke="#e9ecef" stroke-width="1" rx="4"/>
+                                <text x="200" y="85" text-anchor="middle" fill="#003366" font-family="Montserrat, sans-serif" font-size="10" font-weight="600">Total Outflows</text>
+                                <text x="200" y="100" text-anchor="middle" fill="#dc3545" font-family="Montserrat, sans-serif" font-size="12">$174,000</text>
+                                
+                                <rect x="270" y="70" width="110" height="40" fill="#f8f9fa" stroke="#e9ecef" stroke-width="1" rx="4"/>
+                                <text x="325" y="85" text-anchor="middle" fill="#003366" font-family="Montserrat, sans-serif" font-size="10" font-weight="600">Net Flow</text>
+                                <text x="325" y="100" text-anchor="middle" fill="#28a745" font-family="Montserrat, sans-serif" font-size="12">$15,000</text>
+                                
+                                <!-- Chart Area -->
+                                <rect x="20" y="130" width="360" height="80" fill="#e6f3ff" stroke="#d1ecf1" stroke-width="1" rx="4"/>
+                                <text x="50%" y="175" text-anchor="middle" fill="#003366" font-family="Montserrat, sans-serif" font-size="14" font-weight="600">💰 Cash Flow Chart</text>
+                                
+                                <!-- Table -->
+                                <rect x="20" y="230" width="360" height="60" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1" rx="4"/>
+                                <rect x="20" y="230" width="360" height="20" fill="#003366"/>
+                                <text x="100" y="243" fill="white" font-family="Montserrat, sans-serif" font-size="8">Category</text>
+                                <text x="180" y="243" fill="white" font-family="Montserrat, sans-serif" font-size="8">Jan</text>
+                                <text x="220" y="243" fill="white" font-family="Montserrat, sans-serif" font-size="8">Feb</text>
+                                <text x="260" y="243" fill="white" font-family="Montserrat, sans-serif" font-size="8">Mar</text>
+                                
+                                <text x="100" y="260" fill="#333" font-family="Montserrat, sans-serif" font-size="8">AR Collections</text>
+                                <text x="180" y="260" fill="#28a745" font-family="Montserrat, sans-serif" font-size="8">$5,000</text>
+                                <text x="220" y="260" fill="#28a745" font-family="Montserrat, sans-serif" font-size="8">$5,200</text>
+                                <text x="260" y="260" fill="#28a745" font-family="Montserrat, sans-serif" font-size="8">$5,400</text>
+                                
+                                <text x="100" y="275" fill="#333" font-family="Montserrat, sans-serif" font-size="8">New Sales</text>
+                                <text x="180" y="275" fill="#28a745" font-family="Montserrat, sans-serif" font-size="8">$7,000</text>
+                                <text x="220" y="275" fill="#28a745" font-family="Montserrat, sans-serif" font-size="8">$7,300</text>
+                                <text x="260" y="275" fill="#28a745" font-family="Montserrat, sans-serif" font-size="8">$7,600</text>
+                            </svg>
+                        </div>
+                        <ul class="features" style="text-align: left; margin: 1rem 0;">
+                            <li>Monthly cash flow tracking</li>
+                            <li>Inflow/outflow categorization</li>
+                            <li>Interactive charts</li>
+                            <li>Professional Excel exports</li>
+                        </ul>
+                    </div>
                 </div>
 
-                <div class="pricing-card">
-                    <h2>Professional Financial Dashboard</h2>
-                    <div class="price">$99<span style="font-size: 1rem;">/month</span></div>
-                    <ul class="features">
-                        <li>AR Aging Calculator & Dashboard</li>
-                        <li>Cash Flow Forecasting Model</li>
-                        <li>Interactive Charts & Analytics</li>
-                        <li>Export & Reporting Features</li>
-                        <li>Priority Support</li>
-                        <li>Monthly Updates & Enhancements</li>
-                    </ul>
-                    <button class="payment-btn" onclick="processPayment()">Get Started Now</button>
+                <div class="pricing-section">
+                    <h2 class="section-title">Choose Your Plan</h2>
+                    <div class="pricing-grid">
+                        <div class="pricing-card">
+                            <h2>Professional</h2>
+                            <div class="price">$99<span style="font-size: 1rem;">/month</span></div>
+                            <ul class="features">
+                                <li>AR Aging Calculator & Dashboard</li>
+                                <li>Cash Flow Forecasting Model</li>
+                                <li>Interactive Charts & Analytics</li>
+                                <li>Export to Excel (formatted)</li>
+                                <li>Email Support</li>
+                                <li>Monthly Updates</li>
+                            </ul>
+                            <button class="payment-btn" onclick="processPayment()">Get Started Now</button>
+                        </div>
+
+                        <div class="pricing-card">
+                            <h2>Enterprise</h2>
+                            <div class="price">$299<span style="font-size: 1rem;">/month</span></div>
+                            <ul class="features">
+                                <li>Everything in Professional</li>
+                                <li>Custom Dashboard Branding</li>
+                                <li>API Integration</li>
+                                <li>Dedicated Account Manager</li>
+                                <li>Custom Training Sessions</li>
+                                <li>White-label Options</li>
+                            </ul>
+                            <button class="payment-btn" onclick="processPayment()">Contact Sales</button>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="pricing-card">
-                    <h2>Enterprise Package</h2>
-                    <div class="price">$299<span style="font-size: 1rem;">/month</span></div>
-                    <ul class="features">
-                        <li>Everything in Professional</li>
-                        <li>Custom Dashboard Branding</li>
-                        <li>API Integration</li>
-                        <li>Dedicated Account Manager</li>
-                        <li>Custom Training Sessions</li>
-                        <li>White-label Options</li>
-                    </ul>
-                    <button class="payment-btn" onclick="processPayment()">Contact Sales</button>
+                <div style="text-align: center; margin-top: 2rem;">
+                    <a href="../index.html" class="back-link">← Back to Main Site</a>
                 </div>
-
-                <a href="../index.html" class="back-link">← Back to Main Site</a>
             </div>
         </main>
 

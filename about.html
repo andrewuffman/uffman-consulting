@@ -3,56 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - Uffman Consulting Group</title>
+    <title>About – Uffman Consulting Group</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="site-header">
         <div class="container header-container">
-            <h1 class="logo">
-                <a href="index.html">
-                    Uffman Consulting Group
-                </a>
-            </h1>
+            <h1 class="logo"><a href="index.html">Uffman Consulting Group</a></h1>
             <nav class="main-nav">
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
                     <li><a href="services.html">Services</a></li>
-                    <li><a href="/financial-tools/">Financial Tools</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main class="main-content">
-        <section class="inner-hero">
-            <div class="container">
-                <h2>About Us</h2>
-                <p>Expert Order-to-Cash and Accounts Receivable Consulting</p>
-            </div>
-        </section>
+    <section class="inner-hero">
+        <div class="container">
+            <h2>Our Story</h2>
+            <p>Big‑company financial expertise, personalized for your business.</p>
+        </div>
+    </section>
 
-        <section class="about-content">
-            <div class="container">
-                <h3>Our Mission</h3>
-                <p>We help growing businesses optimize their cash flow through expert accounts receivable management and order-to-cash process improvement.</p>
-                
-                <h3>Experience</h3>
-                <p>With years of experience in financial operations, we understand the challenges businesses face with cash flow management and customer collections.</p>
-                
-                <h3>Location</h3>
-                <p>Serving the Dallas–Fort Worth Metroplex and beyond.</p>
-            </div>
-        </section>
-    </main>
+    <section class="about-content">
+        <div class="container">
+            <h3>Our Story</h3>
+            <p>Uffman Consulting Group was born from a simple truth: every growing business needs the strategic financial guidance of a seasoned leader, but not every company can justify hiring a full‑time finance executive. After more than a decade managing multi‑billion‑dollar order‑to‑cash operations at a Fortune 11 pharmaceutical distributor, Andrew Uffman saw countless smaller firms struggle with cash‑flow uncertainty, inefficient billing practices and ballooning days‑sales‑outstanding. Andrew founded Uffman Consulting Group to bring big‑company expertise to locally owned businesses in North Texas—delivering clarity and confidence without the cost or complexity of a large corporate finance department.</p>
+
+            <h3>Our Mission</h3>
+            <p>We exist to empower small and medium‑sized businesses with the same disciplined cash‑flow management and strategic insight that Fortune‑level companies enjoy. By focusing on the order‑to‑cash cycle—billing, collections, cash application and forecasting—we help clients accelerate growth, improve liquidity and make informed decisions.</p>
+
+            <h3>What Sets Us Apart</h3>
+            <ul>
+                <li><strong>Deep expertise with a personal touch:</strong> Andrew’s experience leading a team responsible for $8 billion in receivables translates into proven systems and best practices. Yet our engagements are tailored and collaborative, because no two businesses share the same challenges.</li>
+                <li><strong>Data‑driven and forward‑looking:</strong> We build dashboards and forecasting tools that turn numbers into actionable insight, so you can anticipate cash‑flow needs and seize opportunities before they slip away.</li>
+                <li><strong>People‑first philosophy:</strong> Great financial processes are built by great teams. We partner with your staff and vendors to create a culture of accountability and clear communication, ensuring that improvements stick.</li>
+            </ul>
+
+            <h3>Our Values</h3>
+            <p>Integrity, transparency and continuous learning guide everything we do. We believe that honest conversations and measurable results build trust, and that local businesses deserve the same level of care and rigor as larger enterprises.</p>
+
+            <h3>Why Choose Uffman Consulting Group?</h3>
+            <p>Working with us means you gain a trusted advisor dedicated to your success. We’ll help you design processes that support sustainable growth, strengthen relationships with customers, and give you peace of mind.</p>
+        </div>
+    </section>
+
+    <section class="cta light">
+        <div class="container cta-container">
+            <h2>Let’s drive your cash flow forward</h2>
+            <p>Reach out today to discuss how Andrew’s expertise can support your accounts receivable and order‑to‑cash needs.</p>
+            <a href="contact.html" class="btn primary-btn">Contact Andrew</a>
+        </div>
+    </section>
 
     <footer class="site-footer">
-        <div class="container">
-            <p>&copy; 2025 Uffman Consulting Group. Based in Dallas–Fort Worth, Texas.</p>
+        <div class="container footer-container">
+            <p>&copy; <span id="year"></span> Uffman Consulting Group.</p>
         </div>
     </footer>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
-</html> 
+</html>

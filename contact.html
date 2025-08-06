@@ -16,11 +16,13 @@
                     Uffman Consulting Group
                 </a>
             </h1>
-            <nav class="main-nav">
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle">☰</button>
+            <nav class="main-nav" id="main-nav">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="services.html">Services</a></li>
+                    <li><a href="/financial-tools/">Financial Tools</a></li>
                     <li><a href="contact.html" class="active">Contact</a></li>
                 </ul>
             </nav>
@@ -30,7 +32,7 @@
     <section class="inner-hero">
         <div class="container">
             <h2>Get in Touch</h2>
-            <p>Have questions?  Interested in working together?  We’d love to hear from you.</p>
+            <p>Have questions? Interested in working together? We'd love to hear from you.</p>
         </div>
     </section>
 
@@ -39,9 +41,9 @@
             <div class="contact-info">
                 <h3>Contact Details</h3>
                 <p><strong>Email:</strong> <a href="mailto:andrew@uffmanconsultingroup.com">andrew@uffmanconsultingroup.com</a></p>
-                <p><strong>Phone:</strong> (XXX) XXX‑XXXX</p>
-                <p><strong>Location:</strong> Dallas–Fort Worth, Texas</p>
-                <p>We serve clients throughout the North Texas region.  Please call or send a message to schedule a consultation.</p>
+                <p><strong>Phone:</strong> (XXX) XXX‑XXXX</p>
+                <p><strong>Location:</strong> Dallas–Fort Worth, Texas</p>
+                <p>We serve clients throughout the North Texas region. Please call or send a message to schedule a consultation.</p>
             </div>
             <div class="contact-form">
                 <h3>Send a message</h3>
@@ -64,8 +66,34 @@
             <p>&copy; <span id="year"></span> Uffman Consulting Group.</p>
         </div>
     </footer>
+
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
+        
+        // Mobile menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const mainNav = document.getElementById('main-nav');
+            
+            mobileMenuToggle.addEventListener('click', function() {
+                mainNav.classList.toggle('active');
+            });
+            
+            // Close menu when clicking on a link
+            const navLinks = mainNav.querySelectorAll('a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mainNav.classList.remove('active');
+                });
+            });
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!mainNav.contains(event.target) && !mobileMenuToggle.contains(event.target)) {
+                    mainNav.classList.remove('active');
+                }
+            });
+        });
     </script>
 </body>
-</html>
+</html> 
